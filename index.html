@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<title>report</title>
+<body>
+<h1>REPORTAR PROBLEMA</h1>
+<h4>Através deste site você poderá reportar um erro ou bug que pode ter acontecido ou está acontecendo no bot!</h4>
+<br>
+</body>
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv= "X-UA-Compatible" content="IE-edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./style.css">
+</head>
+<form action="obrigado.html" method="get" onsubmit="abrirWhatsapp()">
+<label for="nome"><strong>*Nome:</strong></label>
+  <input type="text" name="nome" id="nome" placeholder="Nome" required /><br />
+  <label for="nome"><strong>*Telefone:</strong></label>
+  <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required /><br />
+  <label for="nome"><strong>Email:</strong></label>
+  <input type="email" name="email" id="email" placeholder="E-mail(opcional)" /><br />
+  <textarea name="msg" id="msg" placeholder="relate o que aconteceu aqui" rows="5" required></textarea><br />
+  <button type="submit">Enviar dados p/ Whatsapp</button>
+<body>
+<h5>By Audax | Instagram: cc.rsouza_</h5>
+<br>
+</form>
+<script>
+    function abrirWhatsapp() {
+      var nome = document.getElementById("nome").value;
+      var telefone = document.getElementById("telefone").value;
+      var email = document.getElementById("email").value;
+      var msg = document.getElementById("msg").value;
+      var url = "https://wa.me/557188854247?text=" // Seu numero
+        + "*Formulário de Contato*" + "%0a" // Mensagem personalizada
+        + "%0a" // Quebra de linha
+        + "*Nome*: " + nome + "%0a" // Dados do formulário
+        + "*Telefone*: " + telefone + "%0a"
+        + "*E-mail*: " + email + "%0a"
+        + "*Mensagem*: " + msg;
+      window.open(url, '_blank').focus();
+    }
+</script>
+</html>
